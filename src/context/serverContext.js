@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-const SERVER_URL = process.env.REACT_APP_API_SERVER_URL || 'https://api.witherview.com';
+const SERVER_URL = process.env.REACT_APP_API_SERVER_URL || 'http://34.97.12.176:8080';
 
 const api = ({
   url, type = 'get', param, contentType = 'application/json',
@@ -9,6 +9,7 @@ const api = ({
   url: `${SERVER_URL}${url}`,
   data: param,
   headers: {
+    Authorization: `Bearer ${sessionStorage.getItem('accessToken')}`,
     'Content-Type': contentType,
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH',
