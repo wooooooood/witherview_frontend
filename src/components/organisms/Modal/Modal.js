@@ -8,6 +8,7 @@ import SelfTrainStartModal from './SelfTrainStartModal';
 import StudyMakeModal from './StudyMakeModal';
 import EvaluationModal from './EvaluationModal';
 import QuestionListEditModal from './QuestionListEditModal';
+import TagSelectModal from './TagSelectModal';
 
 export default function Modal({ modalName, func, roomId, questionListEdit }) {
   const isShow = useSelector((state) => state.modal[modalName]);
@@ -19,6 +20,7 @@ export default function Modal({ modalName, func, roomId, questionListEdit }) {
     [MODALS.SELF_TRAIN_START_MODAL]: <SelfTrainStartModal />,
     [MODALS.STUDY_MAKE_MODAL]: <StudyMakeModal func={func} />,
     [MODALS.EVALUATION_MODAL]: <EvaluationModal roomId={roomId} />,
+    [MODALS.TAG_SELECT_MODAL]: <TagSelectModal roomId={roomId} />,
   };
   return (
     <>
